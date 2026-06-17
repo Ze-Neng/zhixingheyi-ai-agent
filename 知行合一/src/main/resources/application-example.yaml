@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: zhixingheyi
+  datasource:
+    url: jdbc:postgresql://localhost:5432/zhixingheyi
+    username: postgres
+    password: 你的数据库密码
+    driver-class-name: org.postgresql.Driver
+  mail:
+    host: smtp.qq.com
+    port: 587
+    username: 你的QQ邮箱@qq.com
+    password: 你的邮箱授权码  # QQ邮箱 → 设置 → 账户 → POP3/SMTP 服务 → 生成授权码
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+  ai:
+    deepseek:
+      api-key: 你的DeepSeek-API-Key  # https://platform.deepseek.com/api_keys
+      base-url: https://api.deepseek.com
+      chat:
+        options:
+          model: deepseek-chat
+    zhipuai:
+      api-key: 你的智谱AI-API-Key  # https://open.bigmodel.cn/
+      base-url: https://open.bigmodel.cn/api/paas
+      chat:
+        options:
+          model: glm-4.6
+mybatis:
+  type-aliases-package: com.zeneng.zhixingheyi.model.entity
+  mapper-locations: classpath:mapper/*.xml
+  type-handlers-package: com.zeneng.zhixingheyi.typehandler
+
+document:
+  storage:
+    base-path: ./data/documents
+  chunk:
+    size: 800
+    overlap: 100

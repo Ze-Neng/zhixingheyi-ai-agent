@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(psql --version)",
+      "Bash(pg_isready)",
+      "Bash(systemctl is-active *)",
+      "Bash(service postgresql *)",
+      "Bash(java -version)",
+      "Bash(npm --version)",
+      "Bash(ollama --version)",
+      "Bash(sudo service postgresql status)",
+      "Bash(systemctl status *)",
+      "Bash(netstat -tlnp)",
+      "Bash(psql -h localhost -U postgres -d zhixingheyi -c \"SELECT 1;\")",
+      "Bash(apt list *)",
+      "Bash(dpkg -l)",
+      "Bash(sudo lsof -i :5432)",
+      "Bash(sudo ss -tlnp)",
+      "Bash(timeout 3 bash -c 'echo \"\" > /dev/tcp/localhost/5432')",
+      "Bash(python3 -c \"import socket; s=socket.socket\\(\\); s.settimeout\\(3\\); s.connect\\(\\('localhost',5432\\)\\); print\\('Connected to port 5432'\\); s.close\\(\\)\")",
+      "Bash(git init *)",
+      "Bash(git add *)"
+    ]
+  }
+}
